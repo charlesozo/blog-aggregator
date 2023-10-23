@@ -31,7 +31,7 @@ func (cfg *apiConfig) handlerCreateUser(w http.ResponseWriter, r *http.Request) 
 		Name:      params.Name,
 	})
 	if err != nil {
-		respondWithError(w, http.StatusBadRequest, "Couldn't create user")
+		respondWithError(w, http.StatusBadRequest, fmt.Sprintf("Couldn't create user, %v", err))
 		return
 	}
 
