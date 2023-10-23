@@ -32,10 +32,12 @@ func main() {
 	}
 
 	conn, err := sql.Open("postgres", dbURL)
+	
 
 	if err != nil {
 		log.Fatal("Connect to database", err)
 	}
+
 	queries := database.New(conn)
 	apicfg := apiConfig{
 		DB: queries,
